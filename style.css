@@ -97,7 +97,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+.hamburger {
+    display: none;
 }
 
 .light {
@@ -220,7 +223,7 @@ a {
     position: absolute;
     right: 0px;
     top: -15px;
-    border: 15px solid rgb(230, 230, 230);
+    border: 15px solid rgba(182, 201, 207, 0.74);
     border-top-width: 0px;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -259,7 +262,7 @@ a {
     padding: 5px 10px;
     align-items: center;
     height: 30px;
-    background-color: rgb(230, 230, 230);
+    background-color: rgba(182, 201, 207, 0.74);
     border-top-left-radius: 10px;
 
 }
@@ -292,6 +295,11 @@ a {
     height: 0px;
 }
 
+.close-btn:hover .cross::before,
+.close-btn:hover .cross::after {
+    background-color: rgb(61, 75, 78);
+}
+
 .cross::before, 
 .cross::after {
     content: "";
@@ -321,11 +329,11 @@ a {
     width: 100%;
     padding: 0 10px;
     height: 30px;
-    background-color: rgb(230, 230, 230);
+    background-color: rgba(161, 170, 173, 0.74);
 }
 
 .view-cart {
-    background-color: rgb(230, 230, 230);
+    background-color: rgba(161, 170, 173, 0.74);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,6 +356,8 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 3px;
+    cursor: pointer;
+
 }
 
 .view-cart button:hover {
@@ -500,6 +510,7 @@ ul p {
     font-size: 27px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .learn1 p {
@@ -570,6 +581,7 @@ ul p {
 
 .worldwide {
     display: flex;
+    max-height: 240px;
     flex-grow: 3;
     border: 0.5px solid rgba(185, 165, 76, 0.548);
     justify-content: space-between;
@@ -758,8 +770,8 @@ ul p {
 /* BRANDS */
 
 .brands-section {
-    height: 900px;
     background: linear-gradient(to bottom, white 42px, rgba(216, 216, 216, 0.705) 44px, rgba(216, 216, 216, 0.705) 429px, white 431px);
+    margin-bottom: 100px;
 }
 
 .brands {
@@ -774,6 +786,8 @@ ul p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .brand:hover p {
@@ -822,7 +836,7 @@ ul p {
 
 .learnmors {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 15px;
 }
 
@@ -836,6 +850,8 @@ ul p {
     justify-content: flex-end;
     box-shadow: inset 0 0 3px 0 rgb(255, 255, 255);
     padding: 30px 5px;
+    margin: 0 10px;
+
 }
 
 .learnmore p {
@@ -880,9 +896,10 @@ ul p {
 }
 
 .input-group {
- display: flex;
- justify-content: center;
- align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .email {
@@ -896,6 +913,7 @@ ul p {
     font-size: 16px;
     width: 450px;
     color: rgba(32, 31, 31, 0.671);
+    min-height: 86px;
 }
 
 .email:focus {
@@ -1007,4 +1025,378 @@ footer {
 
 .ftr-right img {
     padding-left: 5px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1150px) {
+
+    .search {
+        display: none;
+    }
+
+    .section:not(:nth-child(4n+1)) {
+        padding-top: 40px;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .side {
+        justify-content: flex-start;
+        left: 4%;
+        top: -10px;
+        font-size: 21px;
+        transform: rotate(0deg);
+        transform-origin: left top;
+        text-transform: uppercase;
+    }
+
+    .glasses h1 {
+    font-size: 80px
+    }
+
+    .glasses img {
+        top: -20px;
+        padding-bottom: 40px;
+    }
+    
+    /* SPECIAL OFFERS */
+
+    .special-offers {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+
+    .special-right {
+        display: none;
+        max-width: 80%;
+        min-width: 320px;
+        min-height: 800px;
+        margin: 0px 20px 20px 20px;
+    }
+
+    .special-left {
+        min-width: 60%;
+        min-height: 700px;
+        margin: 0px 20px 20px 20px;
+    }
+
+    .brune {
+        min-height: 500px;
+    }
+
+    .worldwide {
+        min-height: 250px;
+    }
+
+    /* BESTSELLERS */
+
+    .goods-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .good img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    /* NEW ARRIVALS */
+
+    .new-arrivals .goods-container {
+        margin-bottom: 40px;
+    }
+
+    /* BRANDS */
+
+    .learnmors {
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+
+    .learnmore {
+        width: 40%;
+        min-width: 290px;
+        max-width: 320px;
+        margin: 0 20px;
+    }
+
+    .learnmore p {
+        padding: 10px 10px;
+    }
+
+    .hyde {
+        display: none;
+    }
+
+    /* NEWSLETTER */
+
+    .email {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    .hamburger {
+        display: block;
+        width: 55px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .menu-btn {
+        display: block;
+        width: 25px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .menu-btn span,
+    .menu-btn span::before,
+    .menu-btn span::after {
+        position: absolute;
+        top: 50%; margin-top: 3px;
+        left: 50%; margin-left: -10px;
+        height: 3px;
+        width: 20px;
+        background-color: rgb(153, 123, 77);
+        border-radius: 2px;
+    }
+    
+    .menu-btn span::before,
+    .menu-btn span::after {
+        content: "";
+    }
+    
+    .menu-btn span::before {
+        transform: translateY(-12px);
+    }
+    
+    .menu-btn span::after {
+        transform: translateY(2px); 
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobile-menu-visible {
+        display: block;
+        position: absolute;
+        top: 95px;
+        left: 10px;
+        width: 190px;
+        background-color: rgb(235, 228, 221);
+        z-index: 100;
+    }
+    
+    .mobile-menu-visible ul {
+        list-style-type: none;
+        width:100%;
+        justify-content: space-between;
+        padding-top: 15px;
+    }
+    
+    .mobile-menu-visible ul li {
+        border-top: 0.1px solid rgb(88, 89, 99);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .mobile-menu-visible ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .mobile-menu-visible ul li a:hover {
+        text-shadow:
+                0.5px 0.5px 0px rgb(0, 0, 0),
+                -0.5px -0.5px 0px rgb(97, 87, 70);
+    }
+    
+    .right {
+    width: auto;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .section:not(:nth-child(4n+1)) {
+        padding-top: 40px;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .side {
+        justify-content: flex-start;
+        left: 4%;
+        top: -10px;
+        font-size: 21px;
+        transform: rotate(0deg);
+        transform-origin: left top;
+        text-transform: uppercase;
+    }
+
+    .glasses h1 {
+    font-size: 40px
+    }
+
+    .glasses img {
+        top: 0px;
+        padding-bottom: 40px;
+    }
+
+    .glasses ul li {
+        font-size: 14px;
+    }
+
+    
+    /* SPECIAL OFFERS */
+
+    .special-offers {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+
+    .special-right {
+        display: none;
+        max-width: 80%;
+        min-width: 320px;
+        min-height: 800px;
+        margin: 0px 20px 20px 20px;
+    }
+
+    .special-left {
+        min-width: 60%;
+        min-height: 600px;
+        margin: 0px 20px 20px 20px;
+    }
+
+    .brune {
+        max-height: 400px;
+    }
+
+    .worldwide {
+        max-height: 170px;
+    }
+
+    /* BESTSELLERS */
+
+    .best-sellers {
+        margin-bottom: 80px;
+    }
+
+    .goods-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .border {
+        height: 50%;;
+    }
+
+    .best-sellers .goods-container a:first-child img {
+        margin-bottom: 0px;
+    }
+
+    .best-sellers .goods-container a:first-child h1::before {
+        content: '';
+    }
+
+    .good {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: auto;
+        max-width: 190px;
+        text-align: center;
+        padding: 0 10px 10px 10px;
+    }    
+
+    .good img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    /* NEW ARRIVALS */
+
+    .new-arrivals .goods-container {
+        margin-bottom: 40px;
+    }
+
+    /* BRANDS */
+    
+    .brands {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .brand {
+        padding: 5px;
+    }
+
+    .ray-ban,
+    .gucci,
+    .carerra {
+    width: 145px;
+    height: 145px;
+    background-size: 90%;
+    }
+
+    .brand p {
+        padding: 0px;
+    }
+
+    .learnmors {
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+
+    }
+
+    .learnmore {
+        width: 60%;
+        min-width: 250px;
+        height: 290px;
+        margin: 10px 20px;
+    }
+
+    .learnmore p {
+        padding: 10px 10px;
+    }
+
+    .hyde {
+        display: none;
+    }
+
+    /* NEWSLETTER */
+
+    .email {
+        width: 60%;
+    }
+
+    .down-footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
