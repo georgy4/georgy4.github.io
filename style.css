@@ -1262,7 +1262,7 @@ footer {
     }
 
     .glasses ul li {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     
@@ -1354,6 +1354,12 @@ footer {
 
     /* BRANDS */
     
+    .brands-section {
+        background: linear-gradient(to bottom, white 42px, rgba(216, 216, 216, 0.705) 44px, rgba(216, 216, 216, 0.705) 330px, white 332px);
+        margin-bottom: 100px;
+    }
+    
+
     .brands {
         width: 100%;
         justify-content: space-around;
@@ -1366,13 +1372,15 @@ footer {
     .ray-ban,
     .gucci,
     .carerra {
-    width: 145px;
-    height: 145px;
-    background-size: 90%;
+        width: 90%;
+        height: 120px;
+        background-size: 90%;
     }
 
     .brand p {
         padding: 0px;
+        letter-spacing: 1px;
+        font
     }
 
     .learnmors {
@@ -1392,7 +1400,7 @@ footer {
         padding: 10px 10px;
     }
 
-    .hyde {
+    .hide {
         display: none;
     }
 
