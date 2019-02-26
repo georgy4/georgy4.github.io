@@ -11,13 +11,6 @@ html {
 }
 
 @font-face {
-    font-family: 'Gotham Book';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gotham Book'), url('fonts/Gotham/GothamBook.woff') format('woff');
-    }
-
-@font-face {
     font-family: 'Gotham Thin Regular';
     font-style: normal;
     font-weight: normal;
@@ -25,24 +18,21 @@ html {
 }
 
 @font-face {
-    font-family: 'Gotham Light';
-    font-style: normal;
-     font-weight: normal;
-    src: local('Gotham Light'), url('fonts/Gotham/GothamLight.woff') format('woff');
-    }    
+	font-family: 'GothamPro-Light';
+	src: url('fonts/Gotham/GothamPro-Light.eot?') format('eot'), 
+	     url('fonts/Gotham/GothamPro-Light.otf')  format('opentype'),
+	     url('fonts/Gotham/GothamPro-Light.woff') format('woff'), 
+	     url('fonts/Gotham/GothamPro-Light.ttf')  format('truetype'),
+	     url('fonts/Gotham/GothamPro-Light.svg#GothamPro-Light') format('svg');
+}
 
 @font-face {
-    font-family: 'Gotham Medium';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gotham Medium'), url('fonts/Gotham/GothamMedium.woff') format('woff');
-    }
-
-@font-face {
-    font-family: 'Gotham Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gotham Bold'), url('fonts/Gotham/GothamBold.woff') format('woff');
+    font-family: 'GothamPro-Bold';
+    src: url('fonts/Gotham/GothamPro-Bold.eot?') format('eot'), 
+         url('fonts/Gotham/GothamPro-Bold.otf')  format('opentype'),
+         url('fonts/Gotham/GothamPro-Bold.woff') format('woff'), 
+         url('fonts/Gotham/GothamPro-Bold.ttf')  format('truetype'),
+         url('fonts/Gotham/GothamPro-Bold.svg#GothamPro-Bold') format('svg');
     }
 
 @font-face {
@@ -61,7 +51,7 @@ html {
     font-style: normal;
     }
 
-header {
+.header {
     background-color: rgb(235, 228, 221);
     color: rgb(34, 31, 26);
 }
@@ -103,12 +93,12 @@ header {
     display: none;
 }
 
-.light {
+.light-font-logo {
     font-family: 'Myriad Pro Light';
     font-size: 45px;
 }
 
-.bold {
+.bold-font-logo {
     font-family: 'MyriadProSemibold';
     font-size: 45px;
 }
@@ -151,7 +141,7 @@ a {
     width: 140px;
     align-items: center;
     text-transform: uppercase;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
     font-size: 13px;
 }
 
@@ -193,6 +183,15 @@ a {
     align-items: center;
     cursor: pointer;
     position: relative;
+    vertical-align: center;
+    height: 21px;
+    width: auto;
+}
+.cart p {
+    padding-bottom: 0px;
+    font-family: 'GothamPro-Bold';
+    font-size: 13px;
+    padding-top: 3px;
 }
 
 .cart img {
@@ -223,7 +222,7 @@ a {
     position: absolute;
     right: 0px;
     top: -15px;
-    border: 15px solid rgba(182, 201, 207, 0.74);
+    border: 15px solid rgba(194, 212, 218, 0.74);
     border-top-width: 0px;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -251,7 +250,9 @@ a {
     align-items: center;
     justify-content: space-between;
     z-index: 5;
-    border-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: white;
 }
 
@@ -264,7 +265,6 @@ a {
     height: 30px;
     background-color: rgba(182, 201, 207, 0.74);
     border-top-left-radius: 10px;
-
 }
 
 .cart-top h1 {
@@ -414,11 +414,11 @@ main {
 }
 
 .light1 {
-    font-family: 'Gotham Thin Regular';
+	font-family: 'GothamPro-Light';
 }
 
 .bold1 {
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
 }
 
 .glasses img {
@@ -532,7 +532,7 @@ ul p {
     width: 260px;
     height: 70px;
     text-transform: uppercase;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
     font-size: 16px;
     box-shadow:  0 0 2px 0 rgba(185, 184, 184, 0.5);
     letter-spacing: 1px;
@@ -593,11 +593,12 @@ ul p {
     display: flex;
     height: 75%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
     text-align: center;
+    padding: 35px 10px;
 }
 
 .shipping {
@@ -720,7 +721,7 @@ ul p {
 .good p {
     color: rgb(36, 30, 24);
     font-size: 16pt;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
 }
 
 .good:hover {
@@ -831,7 +832,7 @@ ul p {
     letter-spacing: 3px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
 }
 
 .learnmors {
@@ -861,12 +862,12 @@ ul p {
     text-transform: uppercase;
 }
 
-.lm1 {
+.image1 {
     background: url('img/socales.png') no-repeat;
     background-position: cover;
 }
 
-.lm2 {
+.image2 {
     background: url('img/morbi.png') no-repeat;
     background-position: cover;
 }
@@ -908,7 +909,7 @@ ul p {
     outline: none;
     border: 1px solid rgba(202, 170, 110, 0.548);
     border-right: none;
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
     text-transform: uppercase;
     font-size: 16px;
     width: 450px;
@@ -999,14 +1000,15 @@ footer {
     width: 33%;
 }
 
-.footer-inner p {
+.footer-inner a {
+    display: block;
     color: rgba(177, 177, 177, 0.842);
-    font-family: 'Gotham Bold';
+    font-family: 'GothamPro-Bold';
     font-size: 14px;
     line-height: 1.5;
 }
 
-.footer-inner a:hover p {
+.footer-inner a:hover {
     color: rgb(163, 162, 162);
 }
 
@@ -1131,7 +1133,7 @@ footer {
         padding: 10px 10px;
     }
 
-    .hyde {
+    .hide {
         display: none;
     }
 
@@ -1260,7 +1262,7 @@ footer {
     }
 
     .glasses ul li {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     
@@ -1293,6 +1295,12 @@ footer {
     .worldwide {
         max-height: 170px;
     }
+
+    .shipping,
+    .return {
+    padding: 10px 10px;
+    }
+
 
     /* BESTSELLERS */
 
