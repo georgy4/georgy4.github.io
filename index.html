@@ -6,34 +6,12 @@
             <meta name="viewport" content="width=device-width">
             <link href="style.css" type="text/css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+            <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         </head>
         <body>
             <header class="header">
                 <div class="dark-theme">
                     <div class="container">
-                        <div class="cart-container">
-                            <div class="close--cart">
-                                <div class="cart-window">
-                                    <div class="cart-top">
-                                        <div class="show"></div>
-                                            <h1 class="bold1">My cart, <span class="light1">0 items</span></h1>
-                                        <div class="close-btn">
-                                                <span class="cross"></span>
-                                        </div>
-                                    </div>
-                                    <div class="byes"><p>Items remain in your bag for 60 minutes, and then they’re removed.</p>
-                                    </div>
-                                    <div class="sub-total">
-                                        <p>Sub-total</p>
-                                        <p>$0</p>
-                                    </div>
-                                    <div class="view-cart">
-                                        <button>View Cart</button>
-                                    </div>
-                                    <a href="#worldwide1">Free Shipping Worldwide</a>
-                                </div>
-                            </div>    
-                        </div>
                         <div class="header-container">
                             <div class="hamburger">
                                 <div class="menu-btn">
@@ -54,9 +32,31 @@
                                 <input class="search" type="search" name="search" placeholder="Search.." id="search">
                                 <div class="cart">
                                     <img src="img/cart.png">
-                                    <p>Cart</p>
+                                    <span id="cart">Cart</span>
                                 </div>
-                            </div>      
+                            </div> 
+                            <div class="close--cart">
+                                <div class="cart-window">
+                                    <div class="cart-top">
+                                        <div class="show"></div>
+                                            <h1 class="bold-font">My cart, <span class="light-font">0 items</span></h1>
+                                        <div class="close-btn">
+                                                <span class="cross"></span>
+                                        </div>
+                                    </div>
+                                    <div class="purchases">Items remain in your bag for 60 minutes, and then they’re removed.
+                                    </div>
+                                    <div class="sub-total">
+                                        <p>Sub-total</p>
+                                        <p>$0</p>
+                                    </div>
+                                    <div class="view-cart">
+                                        <button>View Cart</button>
+                                    </div>
+                                    <a href="#worldwide1">Free Shipping Worldwide</a>
+                                </div>
+                            </div>
+         
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <div class="container">
                             <div class="glasses">
                                 <div class="glass1">
-                                    <h1 class="light1">Wo<span class="bold1">men</span></h1>
+                                    <h1 class="light-font">Wo<span class="bold-font">men</span></h1>
                                     <img src="img/layer1.png">
                                     <ul>
                                         <li><a href="">Dioptric</a></li>
@@ -77,7 +77,7 @@
                                     </ul>
                                 </div>
                                 <div class="glass2">
-                                    <h1 class="light1">M<span class="bold1">en</span></h1>
+                                    <h1 class="light-font">M<span class="bold-font">en</span></h1>
                                     <img src="img/layer2.png">
                                     <ul>
                                         <li><a href="">Dioptric</a></li>
@@ -92,7 +92,7 @@
                 <!-- SPECIAL OFFERS SECTION -->
                 <section class="section">
                     <div class="side">
-                        <p class="light1"> — special<span class="bold1">offers</span></p>
+                        <p class="light-font"> — special<span class="bold-font">offers</span></p>
                     </div>
                     <div class="container">
                         <div class="special-offers">
@@ -136,7 +136,7 @@
                 <!-- BEST SELLERS SECTION -->
                 <section class="section">
                     <div class="side">
-                        <p class="light1"> — best<span class="bold1">sellers</span></p>
+                        <p class="light-font"> — best<span class="bold-font">sellers</span></p>
                     </div>
                     <div class="container">
                         <div class="best-sellers">
@@ -182,7 +182,7 @@
                 <!-- NEW ARRIVALS SECTION -->
                 <section class="section">
                     <div class="side">
-                        <p class="light1"> — new<span class="bold1">arrivals</span></p>
+                        <p class="light-font"> — new<span class="bold-font">arrivals</span></p>
                     </div>
                     <div class="container">
                         <div class="new-arrivals">
@@ -227,7 +227,7 @@
                 <!-- BRANDS SECTION -->
                 <section class="section brands-section">
                     <div class="side">
-                        <p class="light1"> — bra<span class="bold1">nds</span></p>
+                        <p class="light-font"> — bra<span class="bold-font">nds</span></p>
                     </div>
                     <div class="container">
                         <div class="brands">
@@ -281,7 +281,7 @@
                 <!-- NEWSLETTER -->
                 <section class="section">
                     <div class="side">
-                        <p class="light1"> — news<span class="bold1">letter</span></p>
+                        <p class="light-font"> — news<span class="bold-font">letter</span></p>
                     </div>
                     <div class="container">
                         <div class="newsletter">
@@ -300,13 +300,13 @@
                         <div class="footer-inner">
                             <div class="top">
                                 <div class="column1">
-                                    <h1 class="light1">bra<span class="bold1">nds</span></h1>
+                                    <h1 class="light-font">bra<span class="bold-font">nds</span></h1>
                                 </div>
                                 <div class="column2">
                                     <h1></h1>
                                 </div>
                                 <div class="column3">
-                                    <h1 class="light1">other <span class="bold1">info</span></h1>
+                                    <h1 class="light-font">other <span class="bold-font">info</span></h1>
                                 </div>
                             </div>
                             <div class="column1">

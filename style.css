@@ -87,6 +87,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .hamburger {
@@ -109,9 +110,6 @@ html {
     font-size: 12px;
     letter-spacing: 1pt;
     padding: 0 15px;
-}
-
-.menu ul {
 }
 
 .menu ul li {
@@ -138,7 +136,7 @@ a {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    width: 140px;
+    width: 140px;;
     align-items: center;
     text-transform: uppercase;
     font-family: 'GothamPro-Bold';
@@ -148,7 +146,7 @@ a {
 .search {
     position: absolute;
     display: block;
-    left: 10px;
+    right: 70px;
     width: 23px;
     height: 21px;
     margin: 0 40px 0 0;
@@ -170,7 +168,7 @@ a {
     width: 140px;
     border-radius: 5px;
     padding-left: 20px;
-    left: -90px;
+    right: 60px;
     font-family: 'Nanum Gothic', sans-serif;
     background-position: 1px 2px;
     background-color: rgb(255, 255, 255);
@@ -187,7 +185,8 @@ a {
     height: 21px;
     width: auto;
 }
-.cart p {
+
+#cart  {
     padding-bottom: 0px;
     font-family: 'GothamPro-Bold';
     font-size: 13px;
@@ -202,21 +201,26 @@ a {
 
 /* CART PREVIEW */
 
-.dark-theme-on {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(34, 34, 87, 0.26);
-    z-index: 40;
-}
-
-.cart-container {
-    width: 100%;
-    position: relative;
-}
-
 .close--cart {
     display: none;
+}    
+
+.open--cart {
+    display: block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    cursor: default;
+    top: 110px;
+    right: 0px;
+    text-transform: none;
+    font-family: 'Myriad Pro Light';
+    font-size: 16px;
+    color: black;
+    cursor: default;
 }
+
 
 .show {
     position: absolute;
@@ -227,24 +231,11 @@ a {
     border-left-color: transparent;
     border-right-color: transparent;
     z-index: 30;
-}
-
-.open--cart {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0px;
-    top: 5px;
-    z-index: 10;
-}
+}    
 
 .cart-window {
-    position: absolute;
     width: 300px;
     height: auto;
-    right: 15px;
-    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -257,6 +248,7 @@ a {
 }
 
 .cart-top {
+    position: relative;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -276,6 +268,7 @@ a {
     height: 20px;
     position: relative;
     cursor: pointer;
+    z-index: 20;
 }
 
 .cross, 
@@ -315,7 +308,7 @@ a {
     transform-origin: center;   
 }
 
-.byes {
+.purchases {
     width: 100%;
     min-height: 150px;    
     flex-grow: 1;
@@ -413,11 +406,11 @@ main {
     letter-spacing: 8pt;
 }
 
-.light1 {
+.light-font {
 	font-family: 'GothamPro-Light';
 }
 
-.bold1 {
+.bold-font {
     font-family: 'GothamPro-Bold';
 }
 
@@ -909,12 +902,13 @@ ul p {
     outline: none;
     border: 1px solid rgba(202, 170, 110, 0.548);
     border-right: none;
+    border-radius: none;
     font-family: 'GothamPro-Bold';
     text-transform: uppercase;
     font-size: 16px;
     width: 450px;
     color: rgba(32, 31, 31, 0.671);
-    min-height: 86px;
+    height: 86px;
 }
 
 .email:focus {
@@ -1711,4 +1705,7 @@ footer {
         height: 40px;
     }
 
+    .footer-inner {
+        width: 100%;
+    }
 }

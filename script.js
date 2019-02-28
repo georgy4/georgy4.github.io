@@ -6,6 +6,7 @@ var mobileMunu = document.querySelector('.menu');
 
 openCart.addEventListener('click', function () {
     field.classList.toggle('open--cart');
+    mobileMunu.classList.remove('mobile-menu-visible');
 });
 
 closeBtn.addEventListener('click', function () {
@@ -14,5 +15,10 @@ closeBtn.addEventListener('click', function () {
 
 menuButton.addEventListener('click', function () {
     mobileMunu.classList.toggle('mobile-menu-visible');
+    field.classList.remove('open--cart');
 });
+
+
+
+
 
