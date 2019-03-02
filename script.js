@@ -18,7 +18,8 @@ menuButton.addEventListener('click', function () {
     field.classList.remove('open--cart');
 });
 
-
-
-
+var qwerty = document.querySelectorAll('.good-source');
+qwerty.addEventListener('click', function (evt) {
+    evt.preventDefault();
+});
 
