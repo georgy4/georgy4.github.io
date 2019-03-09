@@ -3,78 +3,57 @@ var goodCardsData = [
       price: 557,
       img: 'img/1.png',
       name: 'rb41rr erica club',
-      buttonTag: 'span'
+      buttonTag: 'span',
+      isSpecial: true,
+      articul: 123
   }, {
       price: 523,
       img: 'img/2.png',
       name: 'rb41rr erica vhr-16',
-      buttonTag: 'span'
+      buttonTag: 'span',
+      isSpecial: true,
+      articul: 223
   }, {
       price: 447,
       img: 'img/3.png',
       name: 'rb41rr chris vh-2992',
-      buttonTag: 'span'
+      buttonTag: 'span',
+      isSpecial: true,
+      articul: 323
   }, {
       price: 552,
       img: 'img/4.png',
       name: 'rb41rr jacobs all in',
-      buttonTag: 'span'
+      buttonTag: 'span',
+      isSpecial: true,
+      articul: 423
   }, {
-    price: 577,
-    img: 'img/2.png',
-    name: 'rb41rr erica vhr-16',
-    buttonTag: 'span'
+      price: 523,
+      img: 'img/2.png',
+      name: 'rb41rr erica vhr-16',
+      buttonTag: 'span',
+      isSpecial: false,
+      articul: 523
   }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
-  }, {
-    price: 577,
-    img: 'img/4.png',
-    name: 'rb41rr jacobs all in',
-    buttonTag: 'span'
+      price: 523,
+      img: 'img/2.png',
+      name: 'rb41rr erica vhr-16',
+      buttonTag: 'span',
+      isSpecial: false,
+      articul: 623
   }
 ];
+// Removes default action from "a"
+var linkOnGood = document.querySelectorAll('.good-source');
+for (var i = 0; i < linkOnGood.length; i++) {
+    linkOnGood[i].addEventListener('click', function (evt) {
+    evt.preventDefault();
+});
+}
 
 var cardList = document.querySelector('.good-in-cart');
 
-// This code is a machine that construct elements of a card of good
+// This code construct elements of a card of good
 var makeElement = function (tagName, className, text) {
   var element = document.createElement(tagName);
   element.classList.add(className);
@@ -95,8 +74,24 @@ var createCard = function (product) {
   var title = makeElement ('h2', 'product-title', product.name);
   listItem.appendChild(title);
 
-  var price = makeElement('p', 'product-price', product.price);
+  var price = makeElement('p', 'product-price', product.price + ',00 USD');
   listItem.appendChild(price);
+
+  var quantityDiv = makeElement('div', 'quantity');
+
+  var quantityMinus = makeElement('span', 'quantity-minus', '-');
+  quantityDiv.appendChild(quantityMinus);
+
+  var quantityOfGood = makeElement('span', 'quantity-of-good', '1');
+  quantityDiv.appendChild(quantityOfGood);
+
+  var quantityPlus = makeElement('span', 'quantity-plus', '+');
+  quantityDiv.appendChild(quantityPlus);
+
+  listItem.appendChild(quantityDiv);
+
+  var removeGood = makeElement('span', 'remove-good', 'x');
+  listItem.appendChild(removeGood);
 
   return listItem;
 };
@@ -136,8 +131,10 @@ var createCardOfGood = function (goodAtributes) {
 
 // Here we call the function to create each element of the array right on the page
 for (var j = 0; j < goodCardsData.length; j++) {
-  var completeCardOfGood = createCardOfGood(goodCardsData[j]);
-  listOfGoods.appendChild(completeCardOfGood);
+  if (goodCardsData[j].isSpecial) {
+    var completeCardOfGood = createCardOfGood(goodCardsData[j]);
+    listOfGoods.appendChild(completeCardOfGood);
+  }
 }
 
 for (var j = 0; j < goodCardsData.length; j++) {
@@ -155,6 +152,7 @@ var addToCartButton = document.querySelectorAll('.add-to-cart-button');
 var callAddToCartFunction = function (buttonWePress, certainItem) {
   buttonWePress.addEventListener('click', function () {
   cardList.appendChild(certainItem);
+  openingCart();
   return cardList;
 });
   return cardList;
@@ -164,3 +162,6 @@ var callAddToCartFunction = function (buttonWePress, certainItem) {
     var cardItem = createCard(goodCardsData[i]);
     callAddToCartFunction(addToCartButton[i], cardItem);
   }
+
+
+

@@ -1,7 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
+
+*:focus {
+    text-shadow: 1 1 1px rgb(83, 55, 25);
+}
+
 html {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;}
@@ -115,6 +121,7 @@ html {
 .menu ul li {
     list-style-type: none;
     display: inline-block;
+    position: relative;
 }
 
 .menu ul li a {
@@ -122,7 +129,7 @@ html {
     color: rgb(34, 31, 26);
 }
 
-.menu ul li:hover a {
+.menu ul li:hover>a {
     text-shadow:
             0.5px 0.5px 0px rgb(0, 0, 0),
             -0.5px -0.5px 0px rgb(97, 87, 70);
@@ -130,6 +137,30 @@ html {
 
 a {
     text-decoration: none;
+}
+
+.submenu {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+}
+
+.submenu li {
+    padding: 10px 15px;
+    display: block;
+    width: 120px;
+}
+
+.menu ul li:hover .submenu {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+}
+
+.submenu ul li:hover a {
+    text-shadow:
+            0.5px 0.5px 0px rgb(0, 0, 0),
+            -0.5px -0.5px 0px rgb(97, 87, 70);
 }
 
 .right {
@@ -174,6 +205,7 @@ a {
     background-color: rgb(255, 255, 255);
     background-size: 18px 18px;
     color: rgb(88, 88, 88);
+    text-shadow: none;
 }
 
 .cart {
@@ -184,6 +216,10 @@ a {
     vertical-align: center;
     height: 21px;
     width: auto;
+}
+
+.cart:focus #cart {
+    text-shadow: 0 0 2px rgb(87, 66, 26);
 }
 
 #cart  {
@@ -219,8 +255,8 @@ a {
     font-size: 16px;
     color: black;
     cursor: default;
+    background-color: rgba(0, 0, 0, 0.199);
 }
-
 
 .show {
     position: absolute;
@@ -269,6 +305,11 @@ a {
     position: relative;
     cursor: pointer;
     z-index: 20;
+}
+
+.close-btn:focus .cross::before, 
+.close-btn:focus .cross::after {
+    background-color: rgb(61, 75, 78);
 }
 
 .cross, 
@@ -349,6 +390,61 @@ a {
     font-weight: bold;
     width: 50%;
     padding: 3px;
+}
+
+.quantity {
+    float: right;
+    margin: 0 auto;
+    display: flex;
+    padding: 5px 20px;
+    justify-content: space-between;
+    font-family: 'MyriadProSemibold';
+    color: grey;
+}
+
+.remove-good {
+    display: block;
+    background-image: url("img/remove.png") no-repeat 50px 50px;
+    background-position: 0px 0px;
+    width: 15px;
+    height: 15px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.quantity-of-good {
+    width: 30px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(201, 201, 201));
+}
+
+.quantity-minus {
+    border-right: 1px solid rgb(182, 180, 180);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.quantity-plus {
+    border-left: 1px solid rgb(197, 197, 197);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quantity-minus,
+.quantity-plus {
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(201, 201, 201));
+}
+
+.quantity-minus:active,
+.quantity-plus:active {
+    background: linear-gradient(to bottom, rgb(236, 235, 235), rgb(194, 194, 194));
 }
 
 .sub-total {
@@ -757,7 +853,8 @@ ul p {
     font-family: 'GothamPro-Bold';
 }
 
-.add-to-cart-button {
+.add-to-cart-button,
+.add-to-cart-button-two {
     visibility: hidden;
     margin-top: 10px;
     display: block;
@@ -768,11 +865,13 @@ ul p {
     border-radius: 5px;
 }
 
-.add-to-cart-button:hover {
+.add-to-cart-button:hover,
+.add-to-cart-button-two:hover {
     box-shadow: 0 0 5px 3px rgba(124, 119, 113, 0.466);
 }
 
-.add-to-cart-button:active {
+.add-to-cart-button:active,
+.add-to-cart-button-two:active {
     background-color: rgba(235, 235, 235, 0.425);
     box-shadow: 0 0 3px 1px rgba(65, 62, 60, 0.466);
 }
@@ -783,7 +882,8 @@ ul p {
     box-shadow: 0.5px 0.5px 5px 0 rgba(165, 164, 164, 0.589);
 }
 
-.good:hover .add-to-cart-button {
+.good:hover .add-to-cart-button,
+.good:hover .add-to-cart-button-two {
     visibility: visible
 }
 
@@ -986,6 +1086,8 @@ ul p {
 }
 
 .button {
+    position: relative;
+    left: -5px;
     display: inline-block;
     outline: none;
     box-shadow: none;
@@ -1217,6 +1319,12 @@ footer {
         position: relative;
         cursor: pointer;
     }
+
+    .menu-btn:focus span,
+    .menu-btn:focus span::before,
+    .menu-btn:focus span::after {
+        background-color: rgb(109, 87, 55); 
+    }
     
     .menu-btn span,
     .menu-btn span::before,
@@ -1256,7 +1364,18 @@ footer {
         background-color: rgb(235, 228, 221);
         z-index: 100;
     }
-    
+
+    .submenu {
+        left: 160px;
+        top: -15px;
+        padding: 0px 0px 0px 15px;
+    }
+
+    .submenu li {
+        width: 150px;
+        padding: 0px;
+    }
+
     .mobile-menu-visible ul {
         list-style-type: none;
         width:100%;
@@ -1402,7 +1521,8 @@ footer {
         height: 100%;
     }
 
-    .add-to-cart-button {
+    .add-to-cart-button,
+    .add-to-cart-button-two {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1568,6 +1688,17 @@ footer {
                 0.5px 0.5px 0px rgb(0, 0, 0),
                 -0.5px -0.5px 0px rgb(97, 87, 70);
     }
+
+    .submenu {
+        left: 160px;
+        top: -15px;
+        padding: 0px 0px 0px 15px;
+    }
+
+    .submenu li {
+        width: 130px;
+        padding: 0px;
+    }
     
     .right {
     width: auto;
@@ -1696,7 +1827,8 @@ footer {
         height: 100%;
     }
 
-    .add-to-cart-button {
+    .add-to-cart-button,
+    .add-to-cart-button-two {
         display: flex;
         justify-content: center;
         align-items: center;

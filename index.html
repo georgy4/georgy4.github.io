@@ -14,7 +14,7 @@
                     <div class="container">
                         <div class="header-container">
                             <div class="hamburger">
-                                <div class="menu-btn">
+                                <div class="menu-btn" tabindex="0">
                                 <span></span>
                                 </div>
                             </div>
@@ -23,14 +23,29 @@
                             </div>
                             <div class="menu">
                                 <ul>
-                                    <li><a href="">Dioptric Glasses</a></li>
-                                    <li><a href="">Sunglasses</a></li>
-                                    <li><a href="">Kids  Glasses</a></li>
+                                    <li><a href="">Dioptric Glasses</a>
+                                        <ul class="submenu">
+                                            <li><a href="">One glass</a></li>
+                                            <li><a href="">Two glass</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Sunglasses</a>
+                                        <ul class="submenu">
+                                            <li><a href="">One glass</a></li>
+                                            <li><a href="">Two glass</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Kids  Glasses</a>
+                                        <ul class="submenu">
+                                            <li><a href="">One glass</a></li>
+                                            <li><a href="">Two glass</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="right">
                                 <input class="search" type="search" name="search" placeholder="Search.." id="search">
-                                <div class="cart">
+                                <div class="cart" tabindex="0">
                                     <img src="img/cart.png">
                                     <span id="cart">Cart</span>
                                 </div>
@@ -40,7 +55,7 @@
                                     <div class="cart-top">
                                         <div class="show"></div>
                                             <h1 class="bold-font">My cart, <span class="light-font">0 items</span></h1>
-                                        <div class="close-btn">
+                                        <div class="close-btn" tabindex="0">
                                                 <span class="cross"></span>
                                         </div>
                                     </div>
@@ -306,5 +321,7 @@
             </footer>
             <script src="script.js"></script>
             <script src="additems.js"></script>
+            <script src="amountOfGoodInCart.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         </body>
     </html>
