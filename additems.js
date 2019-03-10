@@ -142,7 +142,6 @@ for (var j = 0; j < goodCardsData.length; j++) {
   listOfGoodsTwo.appendChild(completeCardOfGood);
 }
 
-
 // ADDING TO CART WHILE CLICKNG ON 'Addto cart' BUTTON
 var addToCartButton = document.querySelectorAll('.add-to-cart-button');
 
@@ -162,6 +161,7 @@ var callAddToCartFunction = function (buttonWePress, certainItem) {
     var cardItem = createCard(goodCardsData[i]);
     callAddToCartFunction(addToCartButton[i], cardItem);
   }
+
 
 
 

@@ -3,7 +3,7 @@
         <head>
             <title>EyeWest - glass store portfolio webpage</title>
             <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="style.css" type="text/css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
             <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="sub-total">
                                         <p>Sub-total</p>
-                                        <p>$0</p>
+                                        <p>$<span class="sub-total-price">0</span></p>
                                     </div>
                                     <div class="view-cart">
                                         <button>View Cart</button>
@@ -256,6 +256,10 @@
                         </div>
                     </div>
                 </section>
+                <div class="popup">
+                    <div class="popup-top"></div>
+                    <div class="popup-down">hello there</div>
+                </div>
             </main>
             <footer>
                 <div class="container">
@@ -319,9 +323,9 @@
                     </div>
                 </div>
             </footer>
+            <script src="cartHandle.js"></script>
             <script src="script.js"></script>
             <script src="additems.js"></script>
-            <script src="amountOfGoodInCart.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         </body>
     </html>

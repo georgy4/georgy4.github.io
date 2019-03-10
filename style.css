@@ -255,7 +255,6 @@ a {
     font-size: 16px;
     color: black;
     cursor: default;
-    background-color: rgba(0, 0, 0, 0.199);
 }
 
 .show {
@@ -1920,4 +1919,26 @@ footer {
     .footer-inner {
         width: 100%;
     }
+}
+
+
+.popup {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+}
+
+.popup-top {
+    flex-grow: 1;
+    background-color: lightslategray;
+}
+
+.popup-down {
+    flex-grow: 4;
+    background-color: white;
+    border: 1px solid lightslategrey;
 }

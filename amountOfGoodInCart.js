@@ -30,3 +30,5 @@ var countGoods = function (psul, minuz, schet, remover, pro) {
   }
 };
 
+
+

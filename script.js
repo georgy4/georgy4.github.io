@@ -8,7 +8,7 @@ var cartClickHandler = function () {
     field.classList.toggle('open--cart');
     mobileMunu.classList.remove('mobile-menu-visible');
     document.addEventListener('keydown', onCartEscPress);
-};
+    };
 
 var menuClickHandler = function () {
     mobileMunu.classList.toggle('mobile-menu-visible');
