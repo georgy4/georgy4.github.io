@@ -165,3 +165,47 @@ var callAddToCartFunction = function (buttonWePress, certainItem) {
 
 
 
+// COUNTER OF GOOD IN CART
+var openingCart = function () {
+  var plusOneButton = document.querySelectorAll('.quantity-plus');
+  var countOfGood = document.querySelectorAll('.quantity-of-good');
+  var minusOneButton = document.querySelectorAll('.quantity-minus');
+  var el = document.querySelectorAll('.quantity');
+  var removeButton = document.querySelectorAll('.remove-good');
+  var prod = document.querySelectorAll('.product');
+  var contGoods = document.querySelector('.good-in-cart');
+
+  function addOne(x){
+    return function() {
+      console.log(countOfGood[x]);
+      var pluser = parseInt(countOfGood[x].textContent) + 1;
+      countOfGood[x].textContent = pluser;
+    }
+  };
+
+  function removeOne(x){
+    return function() {
+      if (parseInt(countOfGood[x].textContent) > 1) {
+      var minuser = parseInt(countOfGood[x].textContent) - 1;
+      countOfGood[x].textContent = minuser;
+      }
+    }
+  };
+
+  function removeGood(x) {
+    return function() {
+      prod[x].remove();
+    }
+  };
+
+  for (var i = 0; i < el.length; i++) {
+    console.log(prod[i].classList.contains('listener-is-ok'))
+    if (!prod[i].classList.contains('listener-is-ok')) {
+    plusOneButton[i].addEventListener('click', addOne(i));  
+    minusOneButton[i].addEventListener('click', removeOne(i));
+    removeButton[i].addEventListener('click', removeGood(i));
+    prod[i].classList.add('listener-is-ok');
+    }
+  }
+};
+
